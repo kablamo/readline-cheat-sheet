@@ -1,42 +1,54 @@
 # Readline Cheat Sheet
 
-A responsive attractive readline cheat sheet.
+A mobile friendly readline cheat sheet.  Currently it just covers the Emacs
+editing mode.
+
+## How to contribute
+
+Clone the repo:
+
+    git clone git@github.com:kablamo/readline-cheat-sheet.git
+
+Edit one of the following files:
+
+    root/tx/data.yml         # data as yaml
+    root/tx/index.tx         # template (Text::Xslate)
+    root/tx/style.css        # css stylesheet
+
+## How to view your changes
+
+Install dependencies with [cpanm](https://metacpan.org/pod/App::cpanminus)
+and [Carton](https://metacpan.org/pod/Carton):
+
+    curl -L http://cpanmin.us | perl - App::cpanminus
+    cpanm Carton
+    carton
+
+Start the web server:
+
+    plackup -I local/lib/perl5
+
+View the page in your browser:
+
+    http://localhost:5000/
 
 ## Directory layout
 
-.
-├── cpanfile             # used by Carton
-├── cpanfile.snapshot    # used by Carton
-├── html
-│   └── index.html       # generated with xslate - do not edit
-├── lib
-│   └── Readline
-│       └── CheatSheet
-│           └── Plack.pm
-├── README.md
-├── script
-└── tx
-    └── index.tx         # <<< to contribute, edit this
+    .
+    ├── app.psgi                         # Plack web app for development
+    ├── bin
+    │   ├── generate.pl
+    │   └── publish.sh
+    ├── cpanfile                         # CPAN dependencies for Carton
+    ├── cpanfile.snapshot
+    ├── README.md
+    └── root
+        ├── html
+        │   └── index.html               # generated with Text::Xslate
+        └── tx
+            ├── bootstrap.theme.min.css
+            ├── data.yml                 # <<< to contribute, edit this
+            ├── index.tx                 # <<< or this
+            └── style.css                # <<< or this
 
 
-## Install dependencies
-
-Git clone this repo:
-
-    git clone ...
-
-Install [cpanm](https://metacpan.org/pod/App::cpanminus): 
-
-    curl -L http://cpanmin.us | perl - App::cpanminus
-
-Install [Carton](https://metacpan.org/pod/Carton):
-
-    cpanm Carton
-
-Install dependencies to `./local/lib/perl5`:
-
-    carton
-
-# How to view your changes
-
-    plackup -I lib -I local/lib/perl5
