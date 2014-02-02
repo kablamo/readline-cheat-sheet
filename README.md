@@ -20,9 +20,9 @@ Edit one of the following files:
 Install dependencies with [cpanm](https://metacpan.org/pod/App::cpanminus)
 and [Carton](https://metacpan.org/pod/Carton):
 
-    curl -L http://cpanmin.us | perl - App::cpanminus
-    cpanm Carton
-    carton
+    curl -L http://cpanmin.us | perl - App::cpanminus  # install cpanm
+    cpanm Carton                                       # install Carton
+    carton                                             # install dependencies
 
 Start the web server:
 
