@@ -5,8 +5,6 @@ use Plack::Builder;
 use YAML qw/LoadFile/;
 
 my $columns = LoadFile "root/tx/data.yml";
-use DDP;
-p $columns;
 
 builder {
     enable "Rewrite", rules => sub { s|.*|index.tx| };
