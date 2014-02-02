@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap 101 Template</title>
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.0/css/bootstrap.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Crimson+Text' rel='stylesheet' type='text/css'>
+    <style>
+      : include "bootstrap.theme.min.css";
+      : include "style.css";
+    </style>
+  </head>
+  <body>
+
+    <div id="everything">
+
+      <div id="main">
+        <div class="wrapper">
+          <div class="clearfix">
+            <div class="container">
+
+              <div class="row">
+                <div class="col-lg-12 col-md-12">
+                  <h2 class="editor">Emacs editing mode</h2>
+                  <h1>Readline Cheat Sheet</h1>
+                  For detailed information see the 
+                  <a href="http://cnswww.cns.cwru.edu/php/chet/readline/readline.html">GNU Readline library manual</a>
+                  or type <code>man readline</code>.
+                  <br>&nbsp;
+                </div>
+              </div>
+
+              <div class="row">
+                : for $columns -> $tables {
+                <div class="col-lg-6 col-md-6">
+
+                  : for $tables -> $table {
+                  <h2><: $table.name :></h2>
+                  <table>
+
+                    : for $table.rows -> $row {
+                    <tr>
+                      <th>
+
+                        : for $row.cmds -> $cmd {
+                        <kbd><: $cmd :></kbd><br>
+                        : }
+
+                      </th>
+                      <td><: $row.help :></td>
+                    </tr>
+                    : }
+
+                  </table>
+                  : }
+
+                </div>
+                : }
+
+              </div> <!-- end row -->
+
+            </div> <!-- end container -->
+          </div> <!-- end clearfix -->
+        </div> <!-- end wrapper -->
+      </div> <!-- end main -->
+
+      <div id="footer">
+        <div class="container">
+          Created by Eric Johnson (kablamo)
+          <p class="muted credit">View the source on <a href="https://github.com/kablamo/readline-cheat-sheet">Github</a></p>
+        </div>
+      </div>
+
+    </div> <! -- end everything -->
+
+  </body>
+</html>
