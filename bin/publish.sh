@@ -1,6 +1,6 @@
 #!/bin/sh
 
-perl -I ./local/lib/perl5 xslate ... && \
+bin/generate.pl && \
 git co gh-pages && \
 cp -r public/* . && \
 rm -r public && \

@@ -2,6 +2,7 @@
 
 use strict;
 use warnings;
+use lib 'local/lib/perl5';
 
 use Text::Xslate;
 use Path::Class;
