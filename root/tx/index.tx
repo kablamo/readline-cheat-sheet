@@ -68,8 +68,8 @@
 
       <div id="footer">
         <div class="container">
-          Created by Eric Johnson (kablamo)
           <p class="muted credit">View the source on <a href="https://github.com/kablamo/readline-cheat-sheet">Github</a></p>
+          Created by Eric Johnson (<a href="http://kablamo.org">kablamo</a>)
         </div>
       </div>
 
