@@ -51,8 +51,5 @@ View the page in your browser:
             ├── index.tx                 # <<< or this
             └── style.css                # <<< or this
 
-
-<a class="flattr" title="Readline Cheat Sheet" href="https://flattr.com/submit/auto?user_id=kablamo&url=http%3A%2F%2Freadline.kablamo.org%2Femacs.html&title=Readline%20Cheat%20Sheet" target="_blank">
-  <img src="//api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0">
-</a>
+[![Flattr this Git repo](http://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=kablamo&url=https://github.com/kablamo/readline-cheat-sheet&title=Readline%20Cheat%20Sheet&language=EN&tags=github&category=software)
 
