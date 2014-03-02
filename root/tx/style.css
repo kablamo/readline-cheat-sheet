@@ -47,7 +47,7 @@ h2 {
 .editor {
   margin-top: 20px;
   margin-bottom: 0px;
-  color : #0170ff;
+  color : orangered;
 }
 #everything {
   min-height : 100%;
@@ -56,6 +56,9 @@ h2 {
 #main {
   padding        : 10px;
   padding-bottom : 120px;
+}
+.flattr {
+  float: right;
 }
 #footer {
   position   : absolute;
