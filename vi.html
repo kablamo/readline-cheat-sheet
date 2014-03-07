@@ -83,6 +83,8 @@ h2 {
       -moz-box-sizing: border-box;
           box-sizing: border-box;
 }
+      h1      { color: greenyellow }
+      .editor { color: #26c629     }
     </style>
   </head>
   <body>
@@ -97,12 +99,11 @@ h2 {
               <div class="row">
                 <div class="col-lg-12 col-md-12">
                   <h1>Readline Cheat Sheet</h1>
-                  <h2 class="editor">Emacs editing mode</h2>
-                  <div class="clearfix"></div>
+                  <h2 class="editor">Vi editing mode</h2>
                   For detailed information see the 
                   <a href="http://cnswww.cns.cwru.edu/php/chet/readline/readline.html">GNU Readline library manual</a>
                   or type <code>man readline</code>.<br>
-                  For information about Readline in Bash type <code>man bash</code>
+                  For detailed information about Readline in Bash type <code>man bash</code>
                   and search for <code>^READLINE</code> or <code>Commands for moving</code>.
                   <br>&nbsp;
                 </div>
@@ -111,13 +112,119 @@ h2 {
               <div class="row">
                 <div class="col-lg-6 col-md-6">
 
-                  <h2>Moving</h2>
+                  <h2>Entering command mode</h2>
                   <table>
 
                     <tr>
                       <th>
 
-                        <kbd>Ctrl-a</kbd><br>
+                        <kbd>Ctrl-[</kbd><br>
+                        <kbd>Esc</kbd><br>
+
+                      </th>
+                      <td>Start command mode.</td>
+                    </tr>
+
+                  </table>
+                  <h2>Entering insert mode</h2>
+                  <table>
+
+                    <tr>
+                      <th>
+
+                        <kbd>i</kbd><br>
+
+                      </th>
+                      <td>Insert before the cursor.</td>
+                    </tr>
+                    <tr>
+                      <th>
+
+                        <kbd>a</kbd><br>
+
+                      </th>
+                      <td>Insert (append) after the cursor.</td>
+                    </tr>
+                    <tr>
+                      <th>
+
+                        <kbd>I</kbd><br>
+
+                      </th>
+                      <td>Insert at the beginning of the line.</td>
+                    </tr>
+                    <tr>
+                      <th>
+
+                        <kbd>A</kbd><br>
+
+                      </th>
+                      <td>Insert (append) at the end of the line.</td>
+                    </tr>
+                    <tr>
+                      <th>
+
+                        <kbd>r</kbd><br>
+
+                      </th>
+                      <td>Replace the character under the cursor.</td>
+                    </tr>
+                    <tr>
+                      <th>
+
+                        <kbd>R</kbd><br>
+
+                      </th>
+                      <td>Replace characters under the cursor.</td>
+                    </tr>
+                    <tr>
+                      <th>
+
+                        <kbd>v</kbd><br>
+
+                      </th>
+                      <td>Edit the command with $VISUAL, $EDITOR, or vi.</td>
+                    </tr>
+
+                  </table>
+                  <h2>Deleting (command mode)</h2>
+                  <table>
+
+                    <tr>
+                      <th>
+
+                        <kbd>d&lt;movement&gt;</kbd><br>
+
+                      </th>
+                      <td>Delete from the current character to the end of the &lt;movement&gt;.</td>
+                    </tr>
+                    <tr>
+                      <th>
+
+                        <kbd>D</kbd><br>
+                        <kbd>d$</kbd><br>
+
+                      </th>
+                      <td>Delete to the end of the line.</td>
+                    </tr>
+                    <tr>
+                      <th>
+
+                        <kbd>dd</kbd><br>
+                        <kbd>0d$</kbd><br>
+
+                      </th>
+                      <td>Delete the current line.</td>
+                    </tr>
+
+                  </table>
+                  <h2>Moving (command mode)</h2>
+                  <table>
+
+                    <tr>
+                      <th>
+
+                        <kbd>0</kbd><br>
 
                       </th>
                       <td>Move to the start of the current line.</td>
@@ -125,7 +232,7 @@ h2 {
                     <tr>
                       <th>
 
-                        <kbd>Ctrl-e</kbd><br>
+                        <kbd>$</kbd><br>
 
                       </th>
                       <td>Move to the end of the line.</td>
@@ -133,7 +240,8 @@ h2 {
                     <tr>
                       <th>
 
-                        <kbd>Ctrl-f</kbd><br>
+                        <kbd>l</kbd><br>
+                        <kbd>Space</kbd><br>
 
                       </th>
                       <td>Move forward a character.</td>
@@ -141,7 +249,7 @@ h2 {
                     <tr>
                       <th>
 
-                        <kbd>Ctrl-b</kbd><br>
+                        <kbd>h</kbd><br>
 
                       </th>
                       <td>Move back a character.</td>
@@ -149,7 +257,7 @@ h2 {
                     <tr>
                       <th>
 
-                        <kbd>Alt-f</kbd><br>
+                        <kbd>e</kbd><br>
 
                       </th>
                       <td>Move forward to the end of the next word.  Words are alphanumeric.</td>
@@ -157,7 +265,7 @@ h2 {
                     <tr>
                       <th>
 
-                        <kbd>Alt-b</kbd><br>
+                        <kbd>b</kbd><br>
 
                       </th>
                       <td>Move back to the start of the current or previous word.  Words are alphanumeric.</td>
@@ -165,20 +273,22 @@ h2 {
                     <tr>
                       <th>
 
-                        <kbd>Ctrl-l</kbd><br>
+                        <kbd>%</kbd><br>
 
                       </th>
-                      <td>Clear the screen.</td>
+                      <td>Move cursor to a matching (,),[,],{, or }.</td>
                     </tr>
 
                   </table>
-                  <h2>History</h2>
+                  <h2>History (command mode)</h2>
                   <table>
 
                     <tr>
                       <th>
 
+                        <kbd>k</kbd><br>
                         <kbd>Ctrl-p</kbd><br>
+                        <kbd>-</kbd><br>
 
                       </th>
                       <td>Fetch the previous command from the history list.</td>
@@ -186,7 +296,8 @@ h2 {
                     <tr>
                       <th>
 
-                        <kbd>Ctrl-n</kbd><br>
+                        <kbd>j</kbd><br>
+                        <kbd>+</kbd><br>
 
                       </th>
                       <td>Fetch the next command from the history list.</td>
@@ -194,18 +305,18 @@ h2 {
                     <tr>
                       <th>
 
-                        <kbd>Alt-&lt;</kbd><br>
+                        <kbd>G</kbd><br>
 
                       </th>
-                      <td>Move to the first line in the history.</td>
+                      <td>Go to the most recent line in the history list.</td>
                     </tr>
                     <tr>
                       <th>
 
-                        <kbd>Alt-&gt;</kbd><br>
+                        <kbd>15G</kbd><br>
 
                       </th>
-                      <td>Move to the last line in the history.</td>
+                      <td>Go to line 15 in the history list.</td>
                     </tr>
                     <tr>
                       <th>
@@ -213,118 +324,39 @@ h2 {
                         <kbd>Ctrl-r</kbd><br>
 
                       </th>
-                      <td>Search backward through history.</td>
+                      <td>Incremental search backward through history.</td>
                     </tr>
                     <tr>
                       <th>
 
-                        <kbd>Ctrl-s</kbd><br>
+                        <kbd>/</kbd><br>
 
                       </th>
-                      <td>Search forward through history.</td>
+                      <td>Search backward through history for a string.</td>
                     </tr>
                     <tr>
                       <th>
 
-                        <kbd>Alt-p</kbd><br>
+                        <kbd>?</kbd><br>
 
                       </th>
-                      <td>Search backward through history for a given string.</td>
+                      <td>Search forward through history for a string.</td>
                     </tr>
                     <tr>
                       <th>
 
-                        <kbd>Alt-n</kbd><br>
+                        <kbd>n</kbd><br>
 
                       </th>
-                      <td>Search forward through history for a given string.</td>
+                      <td>Repeat the search in the same direction.</td>
                     </tr>
                     <tr>
                       <th>
 
-                        <kbd>Ctrl-Alt-y</kbd><br>
+                        <kbd>N</kbd><br>
 
                       </th>
-                      <td>Insert the first argument to the previous command.  With an argument n, insert the nth word from the previous command.</td>
-                    </tr>
-                    <tr>
-                      <th>
-
-                        <kbd>Alt-.</kbd><br>
-                        <kbd>Alt-_</kbd><br>
-
-                      </th>
-                      <td>Insert the last argument to the previous command.  With an argument n, insert the nth word from the previous command.</td>
-                    </tr>
-
-                  </table>
-                  <h2>Changing Text</h2>
-                  <table>
-
-                    <tr>
-                      <th>
-
-                        <kbd>Ctrl-d</kbd><br>
-
-                      </th>
-                      <td>Delete the character under the cursor.</td>
-                    </tr>
-                    <tr>
-                      <th>
-
-                        <kbd>Delete</kbd><br>
-
-                      </th>
-                      <td>Delete the character before the cursor.</td>
-                    </tr>
-                    <tr>
-                      <th>
-
-                        <kbd>Ctrl-v</kbd><br>
-                        <kbd>Ctrl-q</kbd><br>
-
-                      </th>
-                      <td>Add the next character you type verbatim.</td>
-                    </tr>
-                    <tr>
-                      <th>
-
-                        <kbd>Ctrl-t</kbd><br>
-
-                      </th>
-                      <td>Transpose characters.</td>
-                    </tr>
-                    <tr>
-                      <th>
-
-                        <kbd>Alt-t</kbd><br>
-
-                      </th>
-                      <td>Transpose words.</td>
-                    </tr>
-                    <tr>
-                      <th>
-
-                        <kbd>Alt-u</kbd><br>
-
-                      </th>
-                      <td>Uppercase the current word.</td>
-                    </tr>
-                    <tr>
-                      <th>
-
-                        <kbd>Alt-l</kbd><br>
-
-                      </th>
-                      <td>Lowercase the current word.</td>
-                    </tr>
-                    <tr>
-                      <th>
-
-                        <kbd>Alt-c</kbd><br>
-
-                      </th>
-                      <td>Capitalize the current word.</td>
+                      <td>Repeat the search in the opposite direction.</td>
                     </tr>
 
                   </table>
@@ -332,70 +364,94 @@ h2 {
                 </div>
                 <div class="col-lg-6 col-md-6">
 
-                  <h2>Killing and Yanking (Cutting and Pasting)</h2>
+                  <h2>Cutting and pasting (command mode)</h2>
                   <table>
 
                     <tr>
                       <th>
 
-                        <kbd>Ctrl-k</kbd><br>
+                        <kbd>y&lt;movement&gt;</kbd><br>
 
                       </th>
-                      <td>Kill (cut) forwards to the end of the line.</td>
+                      <td>Copy (yank) from the current character to the end of the &lt;movement&gt;.</td>
                     </tr>
                     <tr>
                       <th>
 
-                        <kbd>Ctrl-u</kbd><br>
-                        <kbd>Ctrl-x Delete</kbd><br>
+                        <kbd>yy</kbd><br>
 
                       </th>
-                      <td>Kill (cut) backwards to the start of the line.</td>
+                      <td>Copy (yank) the current line.</td>
                     </tr>
                     <tr>
                       <th>
 
-                        <kbd>Alt-d</kbd><br>
+                        <kbd>p</kbd><br>
 
                       </th>
-                      <td>Kill (cut) forwards to the end of the current word.</td>
+                      <td>Paste after the cursor.</td>
                     </tr>
                     <tr>
                       <th>
 
-                        <kbd>Alt-Delete</kbd><br>
-                        <kbd>Ctrl-w</kbd><br>
+                        <kbd>P</kbd><br>
 
                       </th>
-                      <td>Kill (cut) backwards to the start of the current word.</td>
-                    </tr>
-                    <tr>
-                      <th>
-
-                        <kbd>Alt-\</kbd><br>
-
-                      </th>
-                      <td>Delete whitespace around the cursor.</td>
-                    </tr>
-                    <tr>
-                      <th>
-
-                        <kbd>Ctrl-y</kbd><br>
-
-                      </th>
-                      <td>Yank (paste) the top of the kill ring.</td>
-                    </tr>
-                    <tr>
-                      <th>
-
-                        <kbd>Alt-y</kbd><br>
-
-                      </th>
-                      <td>Rotate the kill ring, and yank (paste) the new top. Only works after a yank.</td>
+                      <td>Paste before the cursor.</td>
                     </tr>
 
                   </table>
-                  <h2>Completing</h2>
+                  <h2>Undo and Repeat (command mode)</h2>
+                  <table>
+
+                    <tr>
+                      <th>
+
+                        <kbd>u</kbd><br>
+
+                      </th>
+                      <td>Incrementally undo the last action.</td>
+                    </tr>
+                    <tr>
+                      <th>
+
+                        <kbd>U</kbd><br>
+
+                      </th>
+                      <td>Undo all actions.</td>
+                    </tr>
+                    <tr>
+                      <th>
+
+                        <kbd>.</kbd><br>
+
+                      </th>
+                      <td>Repeat the last action.</td>
+                    </tr>
+
+                  </table>
+                  <h2>Marks (command mode)</h2>
+                  <table>
+
+                    <tr>
+                      <th>
+
+                        <kbd>m&lt;letter&gt;</kbd><br>
+
+                      </th>
+                      <td>Set a mark named &lt;letter&gt;</td>
+                    </tr>
+                    <tr>
+                      <th>
+
+                        <kbd>`&lt;letter&gt;</kbd><br>
+
+                      </th>
+                      <td>Jump to the mark named &lt;letter&gt;</td>
+                    </tr>
+
+                  </table>
+                  <h2>Completing (insert mode)</h2>
                   <table>
 
                     <tr>
@@ -406,145 +462,92 @@ h2 {
                       </th>
                       <td>Autocomplete.</td>
                     </tr>
-                    <tr>
-                      <th>
-
-                        <kbd>Alt-?</kbd><br>
-
-                      </th>
-                      <td>List possible completions.</td>
-                    </tr>
-                    <tr>
-                      <th>
-
-                        <kbd>Alt-*</kbd><br>
-
-                      </th>
-                      <td>Insert possible completions.</td>
-                    </tr>
 
                   </table>
-                  <h2>Macros</h2>
+                  <h2>Completing (command mode)</h2>
                   <table>
 
                     <tr>
                       <th>
 
-                        <kbd>Ctrl-x (</kbd><br>
+                        <kbd>=</kbd><br>
 
                       </th>
-                      <td>Begin saving the characters typed as a macro.</td>
+                      <td>Autocomplete.</td>
                     </tr>
                     <tr>
                       <th>
 
-                        <kbd>Ctrl-x )</kbd><br>
+                        <kbd>*</kbd><br>
 
                       </th>
-                      <td>Stop saving the characters typed as a macro.</td>
-                    </tr>
-                    <tr>
-                      <th>
-
-                        <kbd>Ctrl-x e</kbd><br>
-
-                      </th>
-                      <td>Execute the most recent macro.</td>
+                      <td>Insert all possible completions.</td>
                     </tr>
 
                   </table>
-                  <h2>Miscellaneous</h2>
+                  <h2>Miscellaneous (insert mode)</h2>
                   <table>
 
                     <tr>
                       <th>
 
-                        <kbd>Ctrl-x Ctrl-r</kbd><br>
+                        <kbd>Ctrl-d</kbd><br>
 
                       </th>
-                      <td>Read in the contents of the inputrc file.</td>
-                    </tr>
-                    <tr>
-                      <th>
-
-                        <kbd>Ctrl-g</kbd><br>
-
-                      </th>
-                      <td>Abort current editing command</td>
+                      <td>EOF or exit.</td>
                     </tr>
                     <tr>
                       <th>
 
                         <kbd>Ctrl-_</kbd><br>
-                        <kbd>Ctrl-x Ctrl-u</kbd><br>
 
                       </th>
-                      <td>Incremental undo, separately remembered for each line.</td>
+                      <td>Undo the last action.</td>
                     </tr>
                     <tr>
                       <th>
 
-                        <kbd>Alt-r</kbd><br>
+                        <kbd>Ctrl-u</kbd><br>
 
                       </th>
-                      <td>Undo all changes made to this line.  This is like executing the undo command enough times to return the line to its initial state.</td>
+                      <td>Discard the line</td>
                     </tr>
                     <tr>
                       <th>
 
-                        <kbd>Alt-Space</kbd><br>
-                        <kbd>Ctrl-@</kbd><br>
+                        <kbd>Ctrl-t</kbd><br>
 
                       </th>
-                      <td>Set the mark (save this location).</td>
+                      <td>Transpose characters.</td>
+                    </tr>
+
+                  </table>
+                  <h2>Miscellaneous (command mode)</h2>
+                  <table>
+
+                    <tr>
+                      <th>
+
+                        <kbd>Ctrl-l</kbd><br>
+
+                      </th>
+                      <td>Clear the screen.</td>
                     </tr>
                     <tr>
                       <th>
 
-                        <kbd>Ctrl-x Ctrl-x</kbd><br>
+                        <kbd>#</kbd><br>
 
                       </th>
-                      <td>Set the mark and jump to the previous mark.</td>
+                      <td>Insert a comment at the beginning of the line, add the line to the history, then start a new line.</td>
                     </tr>
                     <tr>
                       <th>
 
-                        <kbd>Ctrl-]</kbd><br>
+                        <kbd>~</kbd><br>
 
                       </th>
-                      <td>Search forwards for a single character in the current line and jump to that location.</td>
-                    </tr>
-                    <tr>
-                      <th>
-
-                        <kbd>Ctrl-Alt-]</kbd><br>
-
-                      </th>
-                      <td>Search backwards for a single character in the current line and jump to that location.</td>
-                    </tr>
-                    <tr>
-                      <th>
-
-                        <kbd>Alt-#</kbd><br>
-
-                      </th>
-                      <td>Comment the current line and start a new one.</td>
-                    </tr>
-                    <tr>
-                      <th>
-
-                        <kbd>Ctrl-e</kbd><br>
-
-                      </th>
-                      <td>Enter Emacs editing mode</td>
-                    </tr>
-                    <tr>
-                      <th>
-
-                        <kbd>Ctrl-Alt-j</kbd><br>
-
-                      </th>
-                      <td>Enter Vi editing mode</td>
+                      <td>Change case.</td>
                     </tr>
 
                   </table>
