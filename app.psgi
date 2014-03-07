@@ -8,14 +8,14 @@ my $emacs_data = LoadFile "root/tx/data-emacs.yml";
 my $vi_data    = LoadFile "root/tx/data-vi.yml";
 
 builder {
-    enable "Rewrite", rules => sub { s|index.html|emacs.tx| };
+    enable "Rewrite", rules => sub { s|index.html|emacs.html| };
     enable "Xslate", 
-        path         => qr|vi.tx|,
+        path         => qr|vi.html|,
         root         => 'root/tx',
         xslate_vars  => { columns => $vi_data },
         pass_through => 1;
     enable "Xslate", 
-        path         => qr|emacs.tx|,
+        path         => qr|emacs.html|,
         root         => 'root/tx',
         xslate_vars  => { columns => $emacs_data },
         pass_through => 1;

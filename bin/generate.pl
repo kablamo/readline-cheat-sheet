@@ -16,7 +16,7 @@ foreach my $mode (qw/emacs vi/) {
     my $columns  = LoadFile "root/tx/data-$mode.yml";
     my $vars     = { columns => $columns };
     my $string   = Text::Xslate->new(path => $in_dir)
-        ->render("$mode.tx", $vars);
+        ->render("$mode.html", $vars);
 
     $out_dir->mkpath;
     $out_file->spew($string);
