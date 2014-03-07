@@ -4,14 +4,20 @@ use warnings;
 use Plack::Builder;
 use YAML qw/LoadFile/;
 
-my $columns = LoadFile "root/tx/data.yml";
+my $emacs_data = LoadFile "root/tx/data-emacs.yml";
+my $vi_data    = LoadFile "root/tx/data-vi.yml";
 
 builder {
-    enable "Rewrite", rules => sub { s|.*|index.tx| };
+    enable "Rewrite", rules => sub { s|index.html|emacs.tx| };
     enable "Xslate", 
-        path         => qr|.*|,
+        path         => qr|vi.tx|,
         root         => 'root/tx',
-        xslate_vars  => { columns => $columns },
+        xslate_vars  => { columns => $vi_data },
+        pass_through => 1;
+    enable "Xslate", 
+        path         => qr|emacs.tx|,
+        root         => 'root/tx',
+        xslate_vars  => { columns => $emacs_data },
         pass_through => 1;
 }
 
