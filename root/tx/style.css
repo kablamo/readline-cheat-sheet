@@ -38,15 +38,15 @@ h1 {
   color : #c415ff;
   color : #2a97ff;
   color : #ffb101;
-  margin-top: 0px;
-  margin-bottom: 5px;
+  margin-bottom: 0px;
+  margin-top: 20px;
 }
 h2 {
   font-family : 'Crimson Text', serif;
 }
 .editor {
-  margin-top: 20px;
-  margin-bottom: 0px;
+  margin-bottom: 10px;
+  margin-top: 0px;
   color : orangered;
 }
 #everything {

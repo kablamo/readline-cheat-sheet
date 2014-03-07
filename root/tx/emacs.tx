@@ -23,11 +23,14 @@
 
               <div class="row">
                 <div class="col-lg-12 col-md-12">
-                  <h2 class="editor">Emacs editing mode</h2>
                   <h1>Readline Cheat Sheet</h1>
+                  <h2 class="editor">Emacs editing mode</h2>
+                  <div class="clearfix"></div>
                   For detailed information see the 
                   <a href="http://cnswww.cns.cwru.edu/php/chet/readline/readline.html">GNU Readline library manual</a>
-                  or type <code>man readline</code>.
+                  or type <code>man readline</code>.<br>
+                  For information about Readline in Bash type <code>man bash</code>
+                  and search for <code>^READLINE</code> or <code>Commands for moving</code>.
                   <br>&nbsp;
                 </div>
               </div>
