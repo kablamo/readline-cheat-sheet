@@ -11,8 +11,10 @@ Clone the repo:
 
 Edit one of the following files:
 
-    root/tx/data.yml         # data as yaml
-    root/tx/index.tx         # template (Text::Xslate)
+    root/tx/data-emacs.yml   # data as yaml
+    root/tx/data-vi.yml      # data as yaml
+    root/tx/emacs.html       # template (Text::Xslate)
+    root/tx/vi.html          # template (Text::Xslate)
     root/tx/style.css        # css stylesheet
 
 ## How to view your changes
@@ -26,7 +28,7 @@ and [Carton](https://metacpan.org/pod/Carton):
 
 Start the web server:
 
-    plackup -I local/lib/perl5
+    ./local/bin/plackup -I local/lib/perl5
 
 View the page in your browser:
 
@@ -41,15 +43,19 @@ View the page in your browser:
     │   └── publish.sh
     ├── cpanfile                         # CPAN dependencies for Carton
     ├── cpanfile.snapshot
+    ├── public         # generated with bin/generate.pl and Text::Xslate
+    │   ├── emacs.html
+    │   └── vi.html
     ├── README.md
     └── root
-        ├── html
-        │   └── index.html               # generated with Text::Xslate
         └── tx
             ├── bootstrap.theme.min.css
-            ├── data.yml                 # <<< to contribute, edit this
-            ├── index.tx                 # <<< or this
+            ├── data-emacs.yml           # <<< to contribute, edit this
+            ├── data-vi.yml              # <<< or this
+            ├── emacs.html               # <<< or this
             └── style.css                # <<< or this
+            ├── vi.html                  # <<< or this
+
 
 [![Flattr this Git repo](http://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=kablamo&url=https://github.com/kablamo/readline-cheat-sheet&title=Readline%20Cheat%20Sheet&language=EN&tags=github&category=software)
 
