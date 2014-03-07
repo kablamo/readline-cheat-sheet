@@ -11,11 +11,11 @@ Clone the repo:
 
 Edit one of the following files:
 
-    root/tx/data-emacs.yml   # data as yaml
-    root/tx/data-vi.yml      # data as yaml
-    root/tx/emacs.html       # template (Text::Xslate)
-    root/tx/vi.html          # template (Text::Xslate)
-    root/tx/style.css        # css stylesheet
+    root/data-emacs.yml   # data as yaml
+    root/data-vi.yml      # data as yaml
+    root/emacs.html       # template (Text::Xslate)
+    root/vi.html          # template (Text::Xslate)
+    root/style.css        # css stylesheet
 
 ## How to view your changes
 
@@ -48,13 +48,12 @@ View the page in your browser:
     │   └── vi.html
     ├── README.md
     └── root
-        └── tx
-            ├── bootstrap.theme.min.css
-            ├── data-emacs.yml           # <<< to contribute, edit this
-            ├── data-vi.yml              # <<< or this
-            ├── emacs.html               # <<< or this
-            └── style.css                # <<< or this
-            ├── vi.html                  # <<< or this
+        ├── bootstrap.theme.min.css
+        ├── data-emacs.yml           # <<< to contribute, edit this
+        ├── data-vi.yml              # <<< or this
+        ├── emacs.html               # <<< or this
+        ├── style.css                # <<< or this
+        └── vi.html                  # <<< or this
 
 
 [![Flattr this Git repo](http://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=kablamo&url=https://github.com/kablamo/readline-cheat-sheet&title=Readline%20Cheat%20Sheet&language=EN&tags=github&category=software)
