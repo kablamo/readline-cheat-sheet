@@ -66,6 +66,32 @@
       - cmds:
           - %
         help: Move cursor to a matching (,),[,],{, or }.
+  - name: Cutting and pasting (command mode)
+    rows:
+      - cmds:
+          - y<movement>
+        help: Copy (yank) from the current character to the end of the <movement>.
+      - cmds:
+          - yy
+        help: Copy (yank) the current line.
+      - cmds:
+          - p
+        help: Paste after the cursor.
+      - cmds:
+          - P
+        help: Paste before the cursor.
+  - name: Undo and Repeat (command mode)
+    rows:
+      - cmds:
+          - u
+        help: Incrementally undo the last action.
+      - cmds:
+          - U
+        help: Undo all actions.
+      - cmds:
+          - .
+        help: Repeat the last action.
+-
   - name: History (command mode)
     rows:
       - cmds:
@@ -98,32 +124,6 @@
       - cmds:
           - N
         help: Repeat the search in the opposite direction.
--
-  - name: Cutting and pasting (command mode)
-    rows:
-      - cmds:
-          - y<movement>
-        help: Copy (yank) from the current character to the end of the <movement>.
-      - cmds:
-          - yy
-        help: Copy (yank) the current line.
-      - cmds:
-          - p
-        help: Paste after the cursor.
-      - cmds:
-          - P
-        help: Paste before the cursor.
-  - name: Undo and Repeat (command mode)
-    rows:
-      - cmds:
-          - u
-        help: Incrementally undo the last action.
-      - cmds:
-          - U
-        help: Undo all actions.
-      - cmds:
-          - .
-        help: Repeat the last action.
   - name: Marks (command mode)
     rows:
       - cmds:
