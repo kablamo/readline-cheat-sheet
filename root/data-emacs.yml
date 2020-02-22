@@ -98,8 +98,10 @@
         help: Kill (cut) forwards to the end of the current word.
       - cmds:
           - Alt-Delete
+        help: Kill (cut) backwards to the start of the current word (words are alphanumeric).
+      - cmds:
           - Ctrl-w
-        help: Kill (cut) backwards to the start of the current word.
+        help: Kill (cut) backwards to the start of the current word (words are whitespace delimited).
       - cmds:
           - Alt-\
         help: Delete whitespace around the cursor.
